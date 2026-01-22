@@ -1,10 +1,10 @@
 <?php
-
 /**
  * WooCommerce Order Handler Class
  *
  * @package Multilevel_Referral_Plugin_For_WooCommerce
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -171,7 +171,7 @@ if ( ! class_exists( 'WooCommerce_Multilevel_Referral_Order' ) ) {
 					$user_store_credit     = round( get_user_meta( $current_user_id, 'woocommerce_multilevel_referral_store_credit', true ), 2 );
 					$max_store_credit      = round( WC()->session->get( 'max_store_credit' ), 2 );
 					$applied_credit_amount = ( isset( $_POST['applied_credit_amount'] ) ? round( sanitize_text_field( wp_unslash( $_POST['applied_credit_amount'] ) ), 2 ) : '' );
-					if ( 0 === $applied_credit_amount || $user_store_credit !== $applied_credit_amount && $applied_credit_amount > $user_store_credit || $applied_credit_amount !== $max_store_credit && $max_store_credit < $applied_credit_amount ) {
+					if ( 0 === $applied_credit_amount || ( $user_store_credit !== $applied_credit_amount && $applied_credit_amount > $user_store_credit ) || ( $applied_credit_amount !== $max_store_credit && $max_store_credit < $applied_credit_amount ) ) {
 						WC()->session->set( 'store_credit', 0 );
 						throw new Exception( __( 'Please make sure that amount should be equal or less than the maximum limit.', 'multilevel-referral-plugin-for-woocommerce' ) );
 					}
@@ -418,8 +418,7 @@ if ( ! class_exists( 'WooCommerce_Multilevel_Referral_Order' ) ) {
 					} else {
 						$product_credit = round( $woocommerce_multilevel_referral_product_credit * $product_qty, 4 );
 					}
-					if ( 0 !== $welcome_credit ) {
-					} else {
+					if ( 0 === $welcome_credit ) {
 						$total_earn_credits += $product_credit;
 					}
 					if ( ! $first_purchase && 0 === $welcome_credit ) {
@@ -1254,6 +1253,6 @@ if ( ! class_exists( 'WooCommerce_Multilevel_Referral_Order' ) ) {
 		}
 	}
 
-	// end WooCommerce_Multilevel_Referral_Order
+	// end WooCommerce_Multilevel_Referral_Order.
 	$GLOBALS['woocommerce_multilevel_referral_order'] = new WooCommerce_Multilevel_Referral_Order();
 }

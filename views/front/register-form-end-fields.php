@@ -1,10 +1,10 @@
 <?php
-
 /**
  * Front Register Form End Fields View
  *
  * @package Multilevel_Referral_Plugin_For_WooCommerce
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

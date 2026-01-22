@@ -1,10 +1,10 @@
 <?php
-
 /**
  * Referral Users Class
  *
  * @package Multilevel_Referral_Plugin_For_WooCommerce
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -2368,7 +2368,7 @@ if ( ! class_exists( 'WooCommerce_Multilevel_Referral_Users' ) ) {
 			if ( isset( $_POST['termsandconditions'] ) && 1 === (int) $_POST['termsandconditions'] ) {
 				update_user_meta( $woocommerce_multilevel_referral_customer_id, 'termsandconditions', sanitize_text_field( wp_unslash( $_POST['termsandconditions'] ) ) );
 			}
-			if ( isset( $_POST['join_referral_program'] ) && $_POST['join_referral_program'] < 3 || $parent_id ) {
+			if ( ( isset( $_POST['join_referral_program'] ) && $_POST['join_referral_program'] < 3 ) || $parent_id ) {
 				$woocommerce_multilevel_referral_code = $this->referral_code( $woocommerce_multilevel_referral_customer_id );
 				$credit_for                           = get_option( 'woocommerce_multilevel_referral_welcome_credit_for', 'new' );
 				$benefit                              = 0;
@@ -2654,5 +2654,5 @@ if ( ! class_exists( 'WooCommerce_Multilevel_Referral_Users' ) ) {
 		}
 	}
 
-	// end WooCommerce_Multilevel_Referral_Users
+	// end WooCommerce_Multilevel_Referral_Users.
 }

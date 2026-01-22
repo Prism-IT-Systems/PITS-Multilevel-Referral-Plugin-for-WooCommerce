@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Multilevel Referral Plugin for WooCommerce
  * Description: The WooCommerce Multilevel Plugin is a WooCommerce Add-On Plugin. Attract new customers, grow and market your business for free using a social referral program. Made especially for WooCommerce store owners, Multilevel Referral Plugin for WooCommerce rewards your clients for sharing your website with their friends, family, and colleagues.
@@ -19,6 +18,7 @@
  *
  * @package Multilevel_Referral_Plugin_For_WooCommerce
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Access denied.' );
 }
@@ -161,6 +161,7 @@ if ( function_exists( 'woocommerce_multilevel_referral_fs' ) ) {
 		}
 
 	}
+
 	/*
 	 * Check requirements and load main class
 	 * The main program needs to be in a separate file that only gets loaded if the plugin requirements are met. Otherwise older PHP installations could crash when trying to parse it.

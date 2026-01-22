@@ -1,11 +1,11 @@
 <?php
-
 /**
  * Product Meta Box
  *
  * @package Multilevel_Referral_Plugin_For_WooCommerce
  * @since   2.28.1
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

@@ -1,11 +1,11 @@
 <?php
-
 /**
  * Admin Referral Settings
  *
  * @package Multilevel_Referral_Plugin_For_WooCommerce
  * @since   2.28.1
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 	// Exit if accessed directly.
@@ -47,7 +47,7 @@ if ( ! class_exists( 'WooCommerce_Multilevel_Referral_Settings' ) ) {
 		public function woocommerce_multilevel_referral_add_banner_body_class( $classes ) {
 			global $post;
 			$url_data = woocommerce_multilevel_referral_get_query_vars();
-			if ( isset( $url_data['post_type'] ) && 'wc_ml_ref_banner' === sanitize_text_field( wp_unslash( $url_data['post_type'] ) ) || isset( $post->post_type ) && 'wc_ml_ref_banner' === $post->post_type ) {
+			if ( ( isset( $url_data['post_type'] ) && 'wc_ml_ref_banner' === sanitize_text_field( wp_unslash( $url_data['post_type'] ) ) ) || ( isset( $post->post_type ) && 'wc_ml_ref_banner' === $post->post_type ) ) {
 				$classes = ' toplevel_page_wc_referral ';
 			}
 			$class_name = 'woocommerce_multilevel_referral_free_plan';

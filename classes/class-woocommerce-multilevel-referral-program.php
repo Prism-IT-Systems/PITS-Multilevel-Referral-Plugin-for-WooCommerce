@@ -1,10 +1,10 @@
 <?php
-
 /**
  * Referral Program Class
  *
  * @package Multilevel_Referral_Plugin_For_WooCommerce
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -785,5 +785,5 @@ if ( ! class_exists( 'WooCommerce_Multilevel_Referral_Program' ) ) {
 		}
 	}
 
-	// end WooCommerce_Multilevel_Referral_Program
+	// end WooCommerce_Multilevel_Referral_Program.
 }

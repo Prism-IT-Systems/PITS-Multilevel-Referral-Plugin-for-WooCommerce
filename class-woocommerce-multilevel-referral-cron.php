@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Cron Job Handler.
  *
@@ -10,6 +9,7 @@
  * @subpackage  Cron
  * @since       1.0.0
  */
+
 defined( 'ABSPATH' ) || exit;
 require_once '../../../wp-load.php';
 if ( ! class_exists( 'WooCommerce_Multilevel_Referral_Cron' ) ) {
